@@ -1,7 +1,11 @@
 const express = require('express');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpack = require('webpack');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const webpackConfig = require('../webpack.config.js');
+// const webpackParser = require('webpack-body-parser');
+const User = require('./Users/Users.js');
 const app = express();
 
 const compiler = webpack(webpackConfig);
@@ -18,8 +22,35 @@ app.use(webpackDevMiddleware(compiler, {
   historyApiFallback: true,
 }));
 
-const server = app.listen(3000, function() {
-  const host = server.address().address;
-  const port = server.address().port;
-  console.log('Orderly Phoenix listening at http://%s:%s', host, port);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+// app.use(webpackParser.json());
+// app.use(webpackParser.urlencoded({extended: false}));
+
+app.post('/test', function(req, res) {
+  console.log('REQ BODY: ', req.body);
+  var testUser = new User({username: req.body.username});
+  testUser.save(function(err) {
+    if (err) {
+      console.log('ERROR', err);
+      res.send('YOU DONE GOOFED!!');
+    } else {
+      res.send('WE DID IT YYYAAAAAYYYYY!!!!');
+    }
+  });
+})
+
+mongoose.connect('mongodb://localhost/codr', function(err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('CONNECTED to the database!!');
+  }
+});
+
+
+var port = process.env.port || 3000;
+
+const server = app.listen(port, function() {
+  console.log(`Orderly Phoenix listening at ${port}`);
 });
