@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var User = new Schema({
+const userSchema = new Schema({
   username: String,
   password: String,
   gameData: {
@@ -10,4 +10,4 @@ var User = new Schema({
   }
 });
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('User', userSchema);
