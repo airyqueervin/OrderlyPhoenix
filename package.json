@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "webpack",
-    "start": "node server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "webpack --watch",
+    "start": "npm-run-all --parallel watch:server watch:build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:build": "webpack --watch",
+    "watch:server": "nodemon \"./server/server.js\" --watch \"./server\""
   },
   "repository": {
     "type": "git",
