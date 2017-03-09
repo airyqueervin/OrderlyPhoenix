@@ -1,0 +1,45 @@
+{
+  "name": "OrderlyPhoenix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "compile": "webpack --watch",
+    "start": "npm-run-all --parallel watch:server watch:build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:build": "webpack --watch",
+    "watch:server": "nodemon \"./server/server.js\" --watch \"./server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrderlyPhoenix/OrderlyPhoenix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OrderlyPhoenix/OrderlyPhoenix/issues"
+  },
+  "homepage": "https://github.com/OrderlyPhoenix/OrderlyPhoenix#readme",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "css-loader": "^0.26.4",
+    "style-loader": "^0.13.2"
+  },
+  "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "browser-sync": "^2.18.8",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2",
+    "webpack": "^2.2.1",
+    "webpack-body-parser": "^1.11.110",
+    "webpack-dev-middleware": "^1.10.1"
+  }
+}
