@@ -25,6 +25,7 @@
     "babel-core": "^6.23.1",
     "browser-sync-webpack-plugin": "^1.1.4",
     "css-loader": "^0.26.4",
+    "npm-run-all": "^4.0.2",
     "style-loader": "^0.13.2"
   },
   "dependencies": {
