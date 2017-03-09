@@ -22,13 +22,17 @@
   },
   "homepage": "https://github.com/OrderlyPhoenix/OrderlyPhoenix#readme",
   "devDependencies": {
-    "babel-core": "^6.23.1"
+    "babel-core": "^6.23.1",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "css-loader": "^0.26.4",
+    "style-loader": "^0.13.2"
   },
   "dependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.4.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
+    "browser-sync": "^2.18.8",
     "express": "^4.15.2",
     "express-session": "^1.15.1",
     "react": "^15.4.2",
