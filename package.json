@@ -2,7 +2,7 @@
   "name": "OrderlyPhoenix",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "compile": "webpack --watch",
     "start": "npm-run-all --parallel watch:server watch:build",
@@ -25,11 +25,15 @@
     "babel-core": "^6.23.1"
   },
   "dependencies": {
+    "babel-core": "^6.23.1",
     "babel-loader": "^6.4.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
     "express": "^4.15.2",
     "express-session": "^1.15.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2",
     "webpack": "^2.2.1",
     "webpack-body-parser": "^1.11.110",
     "webpack-dev-middleware": "^1.10.1"
