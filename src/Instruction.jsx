@@ -1,7 +1,7 @@
 import React from 'react';
 require('./../www/main.css');
 
-class Instruction extends React.Component {
+class Challenge extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -11,10 +11,10 @@ class Instruction extends React.Component {
   render() {
     return (
       <div>
-        <p> Instructions </p>
+        <p> Challenge </p>
       </div>
     );
   }
 }
 
-export default Instruction;
+export default Challenge;
