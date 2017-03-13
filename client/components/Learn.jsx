@@ -1,7 +1,7 @@
 import React from 'react';
-require('./../www/main.css');
+require('./../../public/main.css');
 
-class Left extends React.Component {
+class Learn extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -11,10 +11,10 @@ class Left extends React.Component {
   render() {
     return (
       <div>
-        <p> Left </p>
+        <p> Learn </p>
       </div>
     );
   }
 }
 
-export default Left;
+export default Learn;

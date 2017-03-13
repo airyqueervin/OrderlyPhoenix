@@ -1,5 +1,5 @@
 import React from 'react';
-require('./../www/main.css');
+require('./../../public/main.css');
 
 class Instruction extends React.Component {
   constructor() {

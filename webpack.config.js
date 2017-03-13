@@ -1,33 +1,34 @@
 const path = require('path');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-  context: path.join(__dirname, 'src'),
-  entry: [
-    './main.js',
-  ],
+  devtool: 'source-map',
+  entry: path.join(__dirname, './client/main.jsx'),
   output: {
-    path: path.join(__dirname, 'www'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, 'bundles'),
+    filename: 'bundle.js'
   },
   module: {
-    rules: [
+    loaders: [
       {
-        test: /\.jsx$/,
-        exclude: /node_modules/,
-        use: [
-          'babel-loader',
-        ],
+        loader: 'babel-loader',
+        test: /\.jsx?$/
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader',
-      },
-    ],
+        test: /\.css?/,
+        loader: 'style-loader!css-loader'
+      }
+    ]
   },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-    modules: [
-      path.join(__dirname, 'node_modules'),
-    ],
-  }
+  plugins: [
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: '3000',
+      proxy: 'http://localhost:3100/'
+    },
+      {
+        reload: true
+      }
+    )
+  ]
 };

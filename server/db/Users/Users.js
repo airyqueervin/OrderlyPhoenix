@@ -6,7 +6,8 @@ const userSchema = new Schema({
   password: String,
   gameData: {
     achievements: Number,
-    level: Number
+    level: Number,
+    chapter: Number
   }
 });
 
