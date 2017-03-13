@@ -1,8 +1,7 @@
 import React from 'react';
-import Left from './Left.jsx';
-import Right from './Right.jsx';
-
-require('./../www/main.css');
+import ReactDOM from 'react-dom';
+import axios from 'axios';
+require('./../public/main.css');
 
 class App extends React.Component {
   constructor() {
@@ -15,11 +14,9 @@ class App extends React.Component {
     return (
       <div>
         <h1>Codr</h1>
-        < Left />
-        < Right />
       </div>
     );
   }
 }
 
-export default App;
+ReactDOM.render(<App />, document.getElementById('main'));
