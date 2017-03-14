@@ -17,7 +17,10 @@ class App extends React.Component {
   }
 
   getChapter() {
-    axios.get('/api/chapter')
+    axios({
+      url: '/api/chapter',
+      method: 'get'
+    })
     .then(res => {
       this.setState({
         chapter: res.data
