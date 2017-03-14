@@ -11,7 +11,8 @@ class Instruction extends React.Component {
   render() {
     return (
       <div>
-        <p> Instructions </p>
+        <strong><p> Instructions </p></strong>
+        <p>{this.props.chapter ? this.props.chapter[0].instructionText : null}</p>
       </div>
     );
   }
