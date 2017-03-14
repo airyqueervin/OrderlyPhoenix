@@ -15,4 +15,16 @@ const userTest = function(req, res) {
   });
 };
 
+const getChapter = function(req, res) {
+  Game.find()
+  .then(function(data) {
+    res.send(data);
+  })
+  .catch(function(err) {
+    console.error('Error retrieving game data from db: ', err);
+    res.sendStatus(500);
+  });
+};
+
 module.exports.userTest = userTest;
+module.exports.getChapter = getChapter;
