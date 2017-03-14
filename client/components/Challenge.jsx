@@ -1,11 +1,18 @@
 import React from 'react';
-require('./../www/main.css');
+require('./../../public/main.css');
 
 class Challenge extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-    };
+  constructor(props) {
+    super(props);
+    this.state = {};
+
+    this.updateChallenge = this.updateChallenge.bind(this);
+  }
+
+  updateChallenge(e) {
+    this.setState({
+      challenge: e.target.value
+    });
   }
 
   render() {
