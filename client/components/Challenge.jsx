@@ -17,7 +17,7 @@ class Challenge extends React.Component {
 
   render() {
     return (
-      <div className="challenge">
+      <div>
         <p> Challenge </p>
       </div>
     );
