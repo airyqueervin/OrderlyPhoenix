@@ -2,8 +2,8 @@ import React from 'react';
 require('./../../public/main.css');
 
 class Image extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
     };
   }
@@ -11,8 +11,9 @@ class Image extends React.Component {
   render() {
     return (
       <div>
-          <p>Image is here</p>
-        <img src="https://upload.wikimedia.org/wikipedia/en/d/df/Franklin_turtle.jpg" />
+        <img src={this.props.chapter ? this.props.chapter[0].firstImage : null} />
+        <br></br>
+        <img src={this.props.chapter ? this.props.chapter[0].secondImage : null} />
       </div>
     );
   }
