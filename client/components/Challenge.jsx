@@ -5,7 +5,8 @@ class Challenge extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-
+    console.log('props:',  props);
+    // console.log(this.state)
     this.updateChallenge = this.updateChallenge.bind(this);
   }
 
@@ -18,7 +19,7 @@ class Challenge extends React.Component {
   render() {
     return (
       <div>
-        <p> Challenge </p>
+        {this.props.chapter ? this.props.chapter[0].challengeText : null}
       </div>
     );
   }
