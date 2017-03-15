@@ -3,7 +3,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  entry: path.join(__dirname, './client/main.jsx'),
+  entry: path.join(__dirname, './client/Main.jsx'),
   output: {
     path: path.join(__dirname, 'bundles'),
     filename: 'bundle.js'
