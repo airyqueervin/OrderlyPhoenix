@@ -4,10 +4,12 @@ require('./../../public/main.css');
 class Challenge extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {splitText: "bullshit"};
+    this.state = {
+      splitText: 'bullshit'
+    };
     this.updateChallenge = this.updateChallenge.bind(this);
-    // this.splitChallengeText = this.splitChallengeText.bind(this);
-    // this.splitChallengeText();
+    this.splitChallengeText = this.splitChallengeText.bind(this);
+    this.splitChallengeText();
   }
 
   updateChallenge(e) {
@@ -15,15 +17,17 @@ class Challenge extends React.Component {
     this.setState({challengeTex: e.target.value});
   }
 
-  // splitChallengeText(){ 
-  //  this.setState({splitText: this.props.chapter ? this.props.chapter[0].challengeText.split(' ') : null});
-  // }
-
-  componentDidMount() {
+  splitChallengeText() { 
     this.setState({
-      splitText: this.props.chapter[0].challengeText.split(' ')
+      splitText: this.props.chapter[0].challengeText
     });
   }
+
+  // componentWillMount() {
+  //   this.setState({
+  //     splitText: this.props.chapter[0].challengeText
+  //   });
+  // }
 
   // joinChallengeText() {
 
