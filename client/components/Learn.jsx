@@ -8,7 +8,6 @@ class Learn extends React.Component {
   }
 
   render() {
-    console.log('LEANR PROPS: ', this.props);
     return (
       <div>
         <strong><p>Learn</p></strong>

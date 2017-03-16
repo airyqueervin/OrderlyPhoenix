@@ -7,6 +7,7 @@ import axios from 'axios';
 require('./../../public/main.css');
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'reactstrap';
+import Cookies from 'js-cookie';
 
 class Game extends React.Component {
   constructor(props) {
@@ -19,21 +20,40 @@ class Game extends React.Component {
       ]
     };
     this.getChapter = this.getChapter.bind(this);
+    this.changeImage = this.changeImage.bind(this);
+    if (Cookies.get('Level') === undefined) {
+      Cookies.set('Level', '1', { expires: 1000 });
+    }
+    this.setLevel = this.setLevel.bind(this);
     this.getChapter();
+  }
+
+  setLevel() {
+    Cookies.set('Level', this.state.chapter[0].level + 1, { expires: 1000 });
   }
 
   getChapter() {
     axios({
       url: '/api/chapter',
-      method: 'get'
+      method: 'get', 
+      params: {
+        level: Cookies.get('Level')
+      }
     })
     .then(res => {
       this.setState({
-        chapter: res.data
+        chapter: res.data,
+        image: res.data[0].firstImage
       });
     })
     .catch(err => {
       console.error('Error retrieving chapters: ', err);
+    });
+  }
+
+  changeImage() {
+    this.setState({
+      image: this.state.chapter[0].secondImage
     });
   }
 
@@ -44,10 +64,10 @@ class Game extends React.Component {
           <Col md="6"> 
             <Learn chapter={this.state.chapter} />
             <Instruction chapter={this.state.chapter} />
-            <Challenge chapter={this.state.chapter} />
+            <Challenge chapter={this.state.chapter} changeImage={this.changeImage} setLevel={this.setLevel} />
           </Col>
           <Col md="6">
-            <Image chapter={this.state.chapter} />
+            <Image image={this.state.image} />
           </Col>
         </Row>
       </Container>
