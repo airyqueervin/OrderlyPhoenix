@@ -1,0 +1,8 @@
+[
+  {
+    "level": "1", "chapter": "1", "firstImage": "https://s3-us-west-1.amazonaws.com/codr/lvl_1_img_1.png", "secondImage": "https://s3-us-west-1.amazonaws.com/codr/lvl_1_img_2.png", "challengeText": ["input1", "apples"], "instructionText": "Fill in the text below so that the box is labeled.", "learnText": "To start coding, we need a way to save the values from our coding.", "points": "25", "solution": [{"input1": "var"}], "lastLevel": false 
+  },
+  {
+    "level": "2", "chapter": "1", "firstImage": "https://s3-us-west-1.amazonaws.com/codr/lvl_2_img_1.png", "secondImage": "https://s3-us-west-1.amazonaws.com/codr/lvl_2_img_2.png", "challengeText": ["var x = ‘apples’", "\n", "What is x?", "input1"], "instructionText": "Fill in x.", "learnText": "Let’s do some more practice! I’ve created a variable x. Can you tell us what x is pointing to?", "points": "25", "solution": [{"input1": "apples"}], "lastLevel": true
+  }
+]
