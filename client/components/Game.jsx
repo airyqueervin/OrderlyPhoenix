@@ -9,7 +9,13 @@ require('./../../public/main.css');
 class Game extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      chapter: [
+        {
+          level: 0, chapter: 0, firstImage: '', secondImage: '', challengeText: 'BANANA', instructionText: '', learnText: '', points: 0, solution: [''], lastLevel: false 
+        }
+      ]
+    };
     this.getChapter = this.getChapter.bind(this);
     this.getChapter();
   }
