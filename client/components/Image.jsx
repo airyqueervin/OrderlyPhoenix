@@ -12,8 +12,6 @@ class Image extends React.Component {
     return (
       <div>
         <img src={this.props.chapter[0].firstImage} />
-        <br></br>
-        <img src={this.props.chapter[0].secondImage} />
       </div>
     );
   }
