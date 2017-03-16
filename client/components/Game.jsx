@@ -7,6 +7,7 @@ import axios from 'axios';
 require('./../../public/main.css');
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'reactstrap';
+import Cookies from 'js-cookie';
 
 class Game extends React.Component {
   constructor(props) {
@@ -20,7 +21,15 @@ class Game extends React.Component {
     };
     this.getChapter = this.getChapter.bind(this);
     this.changeImage = this.changeImage.bind(this);
+    if (Cookies.get('Level') === undefined) {
+      Cookies.set('Level', '1', { expires: 1000 });
+    }
+    this.setLevel = this.setLevel.bind(this);
     this.getChapter();
+  }
+
+  setLevel() {
+    Cookies.set('Level', this.state.chapter[0].level + 1, { expires: 1000 });
   }
 
   getChapter() {
@@ -28,7 +37,7 @@ class Game extends React.Component {
       url: '/api/chapter',
       method: 'get', 
       params: {
-        level: 1
+        level: Cookies.get('Level')
       }
     })
     .then(res => {
@@ -55,7 +64,7 @@ class Game extends React.Component {
           <Col md="6"> 
             <Learn chapter={this.state.chapter} />
             <Instruction chapter={this.state.chapter} />
-            <Challenge chapter={this.state.chapter} changeImage={this.changeImage}/>
+            <Challenge chapter={this.state.chapter} changeImage={this.changeImage} setLevel={this.setLevel} />
           </Col>
           <Col md="6">
             <Image image={this.state.image} />
