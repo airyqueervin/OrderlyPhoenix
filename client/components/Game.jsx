@@ -14,7 +14,7 @@ class Game extends React.Component {
     this.state = {
       chapter: [
         {
-          level: 0, chapter: 0, firstImage: '', secondImage: '', challengeText: [], instructionText: '', learnText: '', points: 0, solution: [''], lastLevel: false 
+          level: 0, chapter: 0, firstImage: '', secondImage: '', challengeText: [], instructionText: '', learnText: '', points: 0, solution: [''] 
         }
       ]
     };
