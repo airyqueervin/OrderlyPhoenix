@@ -19,21 +19,32 @@ class Game extends React.Component {
       ]
     };
     this.getChapter = this.getChapter.bind(this);
+    this.changeImage = this.changeImage.bind(this);
     this.getChapter();
   }
 
   getChapter() {
     axios({
       url: '/api/chapter',
-      method: 'get'
+      method: 'get', 
+      params: {
+        level: 1
+      }
     })
     .then(res => {
       this.setState({
-        chapter: res.data
+        chapter: res.data,
+        image: res.data[0].firstImage
       });
     })
     .catch(err => {
       console.error('Error retrieving chapters: ', err);
+    });
+  }
+
+  changeImage() {
+    this.setState({
+      image: this.state.chapter[0].secondImage
     });
   }
 
@@ -44,10 +55,10 @@ class Game extends React.Component {
           <Col md="6"> 
             <Learn chapter={this.state.chapter} />
             <Instruction chapter={this.state.chapter} />
-            <Challenge chapter={this.state.chapter} />
+            <Challenge chapter={this.state.chapter} changeImage={this.changeImage}/>
           </Col>
           <Col md="6">
-            <Image chapter={this.state.chapter} />
+            <Image image={this.state.image} />
           </Col>
         </Row>
       </Container>

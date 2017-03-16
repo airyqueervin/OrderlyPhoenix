@@ -44,9 +44,9 @@ class Challenge extends React.Component {
 
   submitAns() {
     if (this.deepEquals(this.state, this.props.chapter[0].solution[0])) {
-      console.log('Correct');
+      this.props.changeImage();
     } else {
-      console.log('Incorrect');
+      alert('Please try again!');
     }
   }
 
