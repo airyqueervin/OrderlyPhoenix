@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 require('./../../public/main.css');
 
 class Challenge extends React.Component {
@@ -42,8 +43,11 @@ class Challenge extends React.Component {
     return true;
   }
 
-  submitAns() {
+  submitAns(e) {
+    e.preventDefault();
     if (this.deepEquals(this.state, this.props.chapter[0].solution[0])) {
+      this.state = {};
+      ReactDOM.findDOMNode(this.refs.form).reset();
       this.props.changeImage();
       this.props.setLevel();
     } else {
@@ -59,9 +63,11 @@ class Challenge extends React.Component {
     return (
       <div>
         <strong><p>Challenge Text</p></strong>
-        {this.props.chapter[0].challengeText.map(item => this.renderInput(item))}
-        <br/><br/>
-        <button onClick={this.submitAns}>Submit Answer</button>
+        <form onSubmit={this.submitAns} ref="form">
+          {this.props.chapter[0].challengeText.map(item => this.renderInput(item))}
+          <br/><br/>
+          <input type="submit"></input>
+        </form>
       </div>
     );
   }
