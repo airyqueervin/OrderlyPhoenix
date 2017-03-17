@@ -25,6 +25,7 @@ class Game extends React.Component {
       Cookies.set('Level', '1', { expires: 1000 });
     }
     this.setLevel = this.setLevel.bind(this);
+    this.startOver = this.startOver.bind(this);
     this.getChapter();
   }
 
@@ -57,7 +58,22 @@ class Game extends React.Component {
     });
   }
 
+  startOver() {
+    Cookies.set('Level', '1', { expires: 1000 });
+    this.getChapter();
+  }
+
   render() {
+    if (this.state.chapter[0].lastLevel) {
+      return (
+        <div>
+          You did it!
+          <br /> <br />
+          <button onClick={this.startOver}>Play Again</button>
+          <img src="https://i.ytimg.com/vi/Jx8zYrMtdCI/maxresdefault.jpg" />
+        </div>
+      );
+    }
     return (
       <Container>
         <Row>
@@ -68,6 +84,7 @@ class Game extends React.Component {
           </Col>
           <Col md="6">
             <Image image={this.state.image} />
+            <button onClick={this.getChapter}>Next Level</button>
           </Col>
         </Row>
       </Container>
