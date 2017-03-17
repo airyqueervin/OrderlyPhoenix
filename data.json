@@ -131,7 +131,7 @@
     ],
     "instructionText": "Do you think this is true or false?",
     "learnText": "Programming also has a concept called booleans. A boolean will either be ‘true’ or ‘false’. But ‘True’ or ‘False’ do not work!",
-    "points": 5,
+    "points": 25,
     "solution": [{
       "input1": false
     }],
@@ -207,7 +207,7 @@
     ],
     "instructionText": "What is ‘x’ now? Is the condition inside the first parenthesis still true?",
     "learnText": "What happens if the condition is false? For instance, what happens if we say: \n \n if (5 > 10) { \n   var x = 1; \n } \n \n In that case, we need to use an ‘if’ / ‘else’ statement: \n \n if (5 > 10) { \n   var x = 1; \n } else {\n   var x = 2; \n } \n \n We add ‘else’ at the very end of our statement. \n \n If the condition is ‘true’, the code inside the first pair of curly braces will run. \n ‘x’ would be 1. \n If the condition is ‘false’, the code inside the second pair of curly braces will run. \n ‘x’ would be 2. \n \n Here the condition is ‘false’, so x is equal to 2.",
-    "points": 20,
+    "points": 25,
     "solution": [{
       "input1": 2
     }],
@@ -235,7 +235,7 @@
     ],
     "instructionText": "Can you solve the problem now? What is ‘x’?",
     "learnText": "Let’s do some more practice. We’ve created another ‘if’ condition. Except this program uses knowledge we’ve previously learned, like ‘===’.",
-    "points": 10,
+    "points": 25,
     "solution": [{
       "input1": "apple"
     }],
@@ -272,5 +272,134 @@
       "input1": "apple"
     }],
     "lastLevel": false
+  },
+  {
+    "level": 13,
+    "chapter": 4,
+    "firstImage": "UNKNOWN",
+    "secondImage": "UNKNOWN",
+    "challengeText": [
+      "var x = 0;",
+      "\n",
+      "for (var i = 1; i < 4; i++) {",
+      "\n",
+      "x++;",
+      "\n",
+      "}",
+      "\n",
+      "// At the end, x equals 3.",
+      "\n",
+      "input1"
+      ],
+    "instructionText":  "Submit ‘true’ to continue!",
+    "learnText": "For our final chapter, we’re going to introduction ‘for’ loops. This lesson just shows you the final structure of a ‘for’ loop.",
+    "points":  25,
+    "solution": [{
+        "input1":true
+      }],
+    "lastChapter": true
+  },
+  {
+    "level": 14,
+    "chapter": 4,
+    "firstImage": "UNKNOWN",
+    "secondImage": "UNKNOWN",
+    "challengeText": [
+      "var x = 0;",
+      "\n",
+      "for (var i = 1; i < 4; i++) {",
+      "\n",
+      "  x++;",
+      "\n",
+      "}",
+      "\n",
+      "// At the end, x equals 3.",
+      "\n",
+      "input1"
+    ],
+    "instructionText":  "At the very beginning of the loop, what is i?",
+    "learnText": "Let’s focus on how a ‘for’ loop starts. Every ‘for’ loops uses a variable to count. The variable can be called anything, but here we choose to call it ‘i’. \n \n The first part of the loop tells us to start with a value of 1 (‘var i = 1’).",
+    "points":  25,
+    "solution": [{
+        "input1": 1
+      }],
+    "lastChapter": true
+    },
+  {
+    "level": 15,
+    "chapter": 4,
+    "firstImage": "UNKNOWN",
+    "secondImage": "UNKNOWN",
+    "challengeText": [
+      "var x = 0;",
+      "\n",
+      "for (var i = 1; i < _; i++) {",
+      "\n",
+      "x++;",
+      "\n",
+      "}",
+      "\n",
+      "// At the end, x equals 3.",
+      "\n",
+      "input1"
+    ],
+    "instructionText": "If we want the loop to end when x equals three, how should we fill in the blank space?",
+    "learnText": "How do we know when a ‘for’ loop ends? Well, let’s take a look at this example: \n \n var x = 1; \n for (var i = 1; i < 10; i++) { \n   x++; \n } \n \n Here, this loop will keep on running until i = 9 (that is, while i < 10). \n When i equals 10, i will not be less than 10. \n So the loop will no longer run.",
+    "points":  25,
+    "solution": [{
+        "input1":4
+      }],
+    "lastChapter": true
+    },
+  {
+    "level": 16,
+    "chapter": 4,
+    "firstImage": "UNKNOWN",
+    "secondImage": "UNKNOWN",
+    "challengeText": [
+      "var x = 0;",
+      "\n",
+      "for (var i = 1; i < 4; i__) {",
+      "\n",
+      "x__;",
+      "\n",
+      "}",
+      "\n",
+      "// At the end, x equals 3.",
+      "\n",
+      "input1",
+      "\n"
+    ],
+    "instructionText": "Fill in the blanks with the appropriate symbols.",
+    "learnText": "Let’s talk about the ‘++’. ‘++’ means that we’re going to increase the value of something by one. \n \n For instance, let’s say we have: \n \n var x = 1; \n x++; \n \n Now x is equal to two. \n \n  By the way, ‘—-‘ does the opposite of ‘++’.",
+    "points": 25,
+    "solution": [{
+      "input1": "++"
+    }],
+    "lastChapter": true
+  },
+  {
+    "level": 16,
+    "chapter": 4,
+    "firstImage": "UNKNOWN",
+    "secondImage": "UNKNOWN",
+    "challengeText": [
+      "var x = 0;",
+      "\n",
+      "for (var i = 1; i < 4; i++) {",
+      "\n",
+      "x++;",
+      "\n",
+      "}",
+      "\n",
+      "input1"
+    ],
+    "instructionText":  "What is x at the end?",
+    "learnText": "Let’s wrap things up by going step-through-step through this loop. Here’s what happens... \n \n 1) We start with i = 1. \n 2) Is i less than 4? \n 3) Yes it is. Therefore we increase x by one. x = 1 \n 4) Now we go back to the loop between the parenthesis. We increase i by one. \n 5) i = 2 \n 6) Is i less than 4? \n 7) Yes it is. Therefore we increase x by one. x = 2 \n 8) Now we go back to the loop between the parenthesis. We increase i by one. \n 9) i = 3 \n 10) Is i less than 4? \n 11) Yes it is. Therefore we increase x by one. x = 3 \n 12) Now we go back to the loop between the parenthesis. We increase i by one. \n 13) i = 4 \n 14) Is i less than 4? \n 15) NO. \n 16) We’re done. We break out of the loop. x = 3",
+    "points":  25,
+    "solution": [{
+        "input1":3
+      }],
+    "lastChapter": true
   }
 ]
