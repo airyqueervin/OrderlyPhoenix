@@ -2,8 +2,8 @@
   {
     "level": 1,
     "chapter": 1,
-    "firstImage": "https://s3-us-west-1.amazonaws.com/codr/L1I1.png",
-    "secondImage": "https://s3-us-west-1.amazonaws.com/codr/L1I2.png",
+    "firstImage": "https://s3-us-west-1.amazonaws.com/codr/lvl_1_img_1.png",
+    "secondImage": "https://s3-us-west-1.amazonaws.com/codr/lvl_1_img_2.png",
     "challengeText": [
       "input1",
       "apples"
@@ -20,8 +20,8 @@
   {
     "level": 2,
     "chapter": 1,
-    "firstImage": "UNKNOWN",
-    "secondImage": "UNKNOWN",
+    "firstImage": "https://s3-us-west-1.amazonaws.com/codr/lvl_2_img_1.png",
+    "secondImage": "https://s3-us-west-1.amazonaws.com/codr/lvl_2_img_2.png",
     "challengeText": [
       "var x = ‘apples’",
       "\n",
@@ -55,7 +55,7 @@
       "input1": 16,
       "input2": 4
     }],
-    "lastLevel": false
+    "lastLevel": true
   },
   {
     "level": 4,
