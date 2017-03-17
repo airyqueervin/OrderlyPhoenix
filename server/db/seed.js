@@ -20,3 +20,4 @@ Game.remove({}).then(function() {
     });
   });
 });
+
