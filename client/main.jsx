@@ -8,6 +8,7 @@ import { browserHistory, Router, Route, Redirect } from 'react-router';
 require('./../public/main.css');
 // import 'bootstrap/dist/css/bootstrap.css';
 
+
 const Main = (
   <Router history={browserHistory}>
     <Redirect from="/" to="/play" />
