@@ -17,7 +17,8 @@ class Game extends React.Component {
         {
           level: 0, chapter: 0, firstImage: '', secondImage: '', challengeText: [], instructionText: '', learnText: '', points: 0, solution: [''] 
         }
-      ]
+      ],
+      showNextLevel: false
     };
     this.getChapter = this.getChapter.bind(this);
     this.changeImage = this.changeImage.bind(this);
@@ -27,6 +28,8 @@ class Game extends React.Component {
     this.setLevel = this.setLevel.bind(this);
     this.startOver = this.startOver.bind(this);
     this.getPreviousLevel = this.getPreviousLevel.bind(this);
+    this.showNextLevelButton = this.showNextLevelButton.bind(this);
+    this.hideNextLevelButton = this.hideNextLevelButton.bind(this);
     this.getChapter();
   }
 
@@ -69,6 +72,19 @@ class Game extends React.Component {
     this.getChapter();
   }
 
+  showNextLevelButton() {
+    this.setState({
+      showNextLevel: true
+    });
+  }
+
+  hideNextLevelButton() {
+    this.getChapter();
+    this.setState({
+      showNextLevel: false
+    });
+  }
+
   render() {
     if (this.state.chapter[0].lastLevel) {
       return (
@@ -86,13 +102,13 @@ class Game extends React.Component {
           <Col md="6"> 
             <Learn chapter={this.state.chapter} />
             <Instruction chapter={this.state.chapter} />
-            <Challenge chapter={this.state.chapter} changeImage={this.changeImage} setLevel={this.setLevel} />
+            <Challenge chapter={this.state.chapter} changeImage={this.changeImage} setLevel={this.setLevel} showNextLevelButton = {this.showNextLevelButton} />
           </Col>
           <Col md="6">
             <h3>Level {this.state.chapter[0].level}</h3>
             <Image image={this.state.image} />
             {this.state.chapter[0].level > 1 ? <button onClick={this.getPreviousLevel}>Previous Level</button> : null}
-            <button onClick={this.getChapter}>Next Level</button>
+            {this.state.showNextLevel ? <button onClick={this.hideNextLevelButton}>Next Level</button> : null}
           </Col>
         </Row>
       </Container>
