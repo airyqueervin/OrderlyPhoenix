@@ -3,13 +3,15 @@ const db = require('./index.js');
 const data = require('./../../data.json');
 
 Game.remove({}).then(function() {
+  var i = 0;
   data.forEach(function(level) {
     Game.create(level)
     .then(function() {
       console.log('Successfully seeded level ' + level.level + ' data into database');
     })
     .then(function() {
-      if (level.level == data.length) {
+      i++;
+      if (i === data.length) {
         process.exit();
       }
     })
