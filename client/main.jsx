@@ -4,13 +4,11 @@ import axios from 'axios';
 import App from './components/App.jsx';
 import Game from './components/Game.jsx';
 import About from './components/About.jsx';
-import { browserHistory, Router, Route, Redirect } from 'react-router';
+import { browserHistory, hashHistory, Router, Route, Redirect } from 'react-router';
 require('./../public/main.css');
-// import 'bootstrap/dist/css/bootstrap.css';
-
 
 const Main = (
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Redirect from="/" to="/play" />
     <Route path="/" component={App}>
       <Route path="about" component={About} />
