@@ -83,6 +83,7 @@ class Game extends React.Component {
             <Challenge chapter={this.state.chapter} changeImage={this.changeImage} setLevel={this.setLevel} />
           </Col>
           <Col md="6">
+            <h3>Level {this.state.chapter[0].level}</h3>
             <Image image={this.state.image} />
             <button onClick={this.getChapter}>Next Level</button>
           </Col>

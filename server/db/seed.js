@@ -20,3 +20,5 @@ Game.remove({}).then(function() {
     });
   });
 });
+
+
