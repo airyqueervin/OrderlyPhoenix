@@ -11,7 +11,15 @@ class Learn extends React.Component {
     return (
       <div>
         <strong><p>Learn</p></strong>
-        <p>{this.props.chapter[0].learnText}</p>
+        <p>{this.props.chapter[0].learnText.split('\n').map((text, key) => {
+          return (
+            <span key={key}>
+            {text}
+            <br/>
+            </span>
+          )
+        })
+        }</p>
       </div>
     );
   }

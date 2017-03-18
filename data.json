@@ -49,7 +49,7 @@
       "input2"
     ],
     "instructionText": "How could we solve these math problems?",
-    "learnText": "Did you know that it’s also possible to do math using programming? It works almost the exact same way real-life math does. Here’s a quick look at some problems: \n 1+1 equals 2 \n 1-1 equals 0",
+    "learnText": "Did you know that it’s also possible to do math using programming? It works almost the exact same way real-life math does. Here’s a quick look at some problems: \n \n 1+1 equals 2 \n \n 1-1 equals 0",
     "points": 25,
     "solution": [{
       "input1": "16",
@@ -70,7 +70,7 @@
       "input2"
     ],
     "instructionText": "Here are some more problems, this time with multiplication and division? Can you figure out the answers?",
-    "learnText": "We can also do multiplication and division using programming. Multiplication is done with ‘*’, while division is done with ‘/’. Here’s a quick look at some problems: \n \n 1*1 equals 1 \n 1/1 equals 1",
+    "learnText": "We can also do multiplication and division using programming. Multiplication is done with ‘*’, while division is done with ‘/’. Here’s a quick look at some problems: \n \n 1*1 equals 1 \n \n 1/1 equals 1",
     "points": 25,
     "solution": [{
       "input1": "72",
