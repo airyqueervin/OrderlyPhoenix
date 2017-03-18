@@ -50,6 +50,7 @@ class Challenge extends React.Component {
       ReactDOM.findDOMNode(this.refs.form).reset();
       this.props.changeImage();
       this.props.setLevel();
+      this.props.showNextLevelButton();
     } else {
       alert('Please try again!');
     }
