@@ -32,12 +32,12 @@ class Challenge extends React.Component {
         return false;
       }
       for (var item in a) {
-        if (!this.deepEquals(a[item], b[item])) {
+        if (!this.deepEquals(a[item].toUpperCase(), b[item].toUpperCase())) {
           return false;
         }
       }
       return true;
-    } else if (a !== b) {
+    } else if (a.toUpperCase() !== b.toUpperCase()) {
       return false;
     }
     return true;
