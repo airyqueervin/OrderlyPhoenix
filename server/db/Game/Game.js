@@ -10,6 +10,7 @@ const gameSchema = new Schema({
   instructionText: String,
   learnText: String,
   points: Number,
+  hint: String,
   solution: Array,
   lastLevel: Boolean
 });
