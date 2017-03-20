@@ -73,6 +73,10 @@ class Game extends React.Component {
 
   getPreviousLevel() {
     Cookies.set('Level', this.state.chapter[0].level - 1, { expires: 1000 });
+    this.setState({
+      showHintButton: false,
+      showHint: false
+    });
     this.getChapter();
   }
 
