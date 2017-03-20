@@ -18,7 +18,9 @@ class Game extends React.Component {
           level: 0, chapter: 0, firstImage: '', secondImage: '', challengeText: [], instructionText: '', learnText: '', points: 0, solution: [''] 
         }
       ],
-      showNextLevel: false
+      showNextLevel: false,
+      showHintButton: false,
+      showHint: false
     };
     this.getChapter = this.getChapter.bind(this);
     this.changeImage = this.changeImage.bind(this);
@@ -30,6 +32,8 @@ class Game extends React.Component {
     this.getPreviousLevel = this.getPreviousLevel.bind(this);
     this.showNextLevelButton = this.showNextLevelButton.bind(this);
     this.hideNextLevelButton = this.hideNextLevelButton.bind(this);
+    this.showHintButton = this.showHintButton.bind(this);
+    this.showHint = this.showHint.bind(this);
     this.getChapter();
   }
 
@@ -81,7 +85,21 @@ class Game extends React.Component {
   hideNextLevelButton() {
     this.getChapter();
     this.setState({
-      showNextLevel: false
+      showNextLevel: false,
+      showHintButton: false,
+      showHint: false
+    });
+  }
+
+  showHintButton() {
+    this.setState({
+      showHintButton: true
+    });
+  }
+
+  showHint() {
+    this.setState({
+      showHint: true
     });
   }
 
@@ -102,7 +120,9 @@ class Game extends React.Component {
           <Col md="6"> 
             <Learn chapter={this.state.chapter} />
             <Instruction chapter={this.state.chapter} />
-            <Challenge chapter={this.state.chapter} changeImage={this.changeImage} setLevel={this.setLevel} showNextLevelButton = {this.showNextLevelButton} />
+            <Challenge chapter={this.state.chapter} changeImage={this.changeImage} setLevel={this.setLevel} showNextLevelButton = {this.showNextLevelButton} showHintButton={this.showHintButton} />
+            {this.state.showHintButton ? <button onClick={this.showHint}>Hint</button> : null}
+            {this.state.showHint ? <div>{this.state.chapter[0].hint}</div> : null}
           </Col>
           <Col md="6">
             <h3>Level {this.state.chapter[0].level}</h3>
