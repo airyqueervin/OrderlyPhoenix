@@ -33,7 +33,7 @@ class About extends React.Component {
                 loves gjetost cheese, Cave Story, and his favorite cartoon is the Moomins!<br/>
                 <img src="https://s3-us-west-1.amazonaws.com/codr/erik.png" /></td>
                 <td><strong>Alex</strong><br />
-                loves provolone cheese, Super Smash Bros, and his favorite cartoon is Yu Yu Hakusho!
+                loves provolone cheese, Super Smash Bros, and his favorite cartoon is Yu Yu Hakusho!<br />
                 <img src="https://s3-us-west-1.amazonaws.com/codr/alex.png" /></td>
               </tr>
             </table>
