@@ -21,6 +21,10 @@ class Challenge extends React.Component {
   renderInput(item) {
     if (item.includes('input')) {
       return <span> <input placeholder="Fill me in" name={item} onChange={this.updateChallenge} /> </span>;
+    } else if (item === '\n') {
+      return <br />
+    } else if (item.includes('  ')) {
+      return <span>&nbsp;{item}</span>
     } else {
       return item;
     }
@@ -32,12 +36,12 @@ class Challenge extends React.Component {
         return false;
       }
       for (var item in a) {
-        if (!this.deepEquals(a[item], b[item])) {
+        if (!this.deepEquals(a[item].toUpperCase(), b[item].toUpperCase())) {
           return false;
         }
       }
       return true;
-    } else if (a !== b) {
+    } else if (a.toUpperCase() !== b.toUpperCase()) {
       return false;
     }
     return true;
