@@ -31,12 +31,12 @@ class App extends React.Component {
       dropdownOpen: !this.state.dropdownOpen
     })
   }
-    getSpecificChapter(num) {
+    getSpecificChapter(level) {
     axios({
-      url: '/api/chapter',
+      url: '/api/level',
       method: 'get', 
       params: {
-        level: num
+        level: level
       }
     })
     .then(res => {
