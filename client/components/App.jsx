@@ -1,7 +1,9 @@
 import React from 'react';
 require('./../../public/main.css');
-
+import { Nav, NavItem, NavDropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 import { Link } from 'react-router';
+import Cookies from 'js-cookie';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,8 +15,14 @@ class App extends React.Component {
     return (
       <div>
         <h1>Welcome to Codr</h1>
-        <button><Link to="/play">Play</Link></button>
-        <button><Link to="/about">About</Link></button>
+        <Nav tabs>
+          <NavItem>
+            <NavLink><Link to="/play">Play</Link></NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink><Link to="/about">About</Link></NavLink>
+          </NavItem>
+        </Nav>
         {this.props.children}
       </div>
     );
