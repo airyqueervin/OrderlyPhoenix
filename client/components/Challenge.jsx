@@ -21,6 +21,10 @@ class Challenge extends React.Component {
   renderInput(item) {
     if (item.includes('input')) {
       return <span> <input placeholder="Fill me in" name={item} onChange={this.updateChallenge} /> </span>;
+    } else if (item === '\n') {
+      return <br />
+    } else if (item.includes('  ')) {
+      return <span>&nbsp;{item}</span>
     } else {
       return item;
     }
