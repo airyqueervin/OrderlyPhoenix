@@ -156,7 +156,7 @@ class Game extends React.Component {
           You did it!
           <br /> <br />
           <button onClick={this.startOver}>Play Again</button>
-          <img src="https://i.ytimg.com/vi/Jx8zYrMtdCI/maxresdefault.jpg" />
+          <img src="https://s3-us-west-1.amazonaws.com/codrbucket/lvl_finale_resize1000.png" />
         </div>
       );
     }
@@ -174,19 +174,26 @@ class Game extends React.Component {
               </DropdownMenu>
           </NavDropdown>
           <Row>
-            <Col md="6"> 
+            <Col md="6" className="leftHalf"> 
               <Learn chapter={this.state.chapter} />
               <Instruction chapter={this.state.chapter} />
               <Challenge chapter={this.state.chapter} changeImage={this.changeImage} setLevel={this.setLevel} showNextLevelButton = {this.showNextLevelButton} showHintButton={this.showHintButton} />
               {this.state.showHintButton ? <button onClick={this.showHint}>Hint</button> : null}
               {this.state.showHint ? <div>{this.state.chapter[0].hint}</div> : null}
-            </Col>
-            <Col md="6">
-              <h3>Level {this.state.chapter[0].level}</h3>
-              <h3>Points: {this.state.chapter[0].points * this.state.chapter[0].level}</h3>
-              <Image image={this.state.image} />
+              <br />
               {this.state.chapter[0].level > 1 ? <button onClick={this.getPreviousLevel}>Previous Level</button> : null}
               {this.state.showNextLevel ? <button onClick={this.hideNextLevelButton}>Next Level</button> : null}
+            </Col>
+            <Col md="6" className="rightHalf">
+            <Row className="header">
+              <Col md="6">
+                <h3>Level {this.state.chapter[0].level}</h3>
+              </Col>
+              <Col md="6">
+                <h3 className="right">Points: {this.state.chapter[0].points * this.state.chapter[0].level}</h3>
+              </Col>
+            </Row>
+              <Image image={this.state.image} />
             </Col>
           </Row>
         </div>
