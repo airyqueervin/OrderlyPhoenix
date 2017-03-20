@@ -22,7 +22,7 @@ class Game extends React.Component {
       showHintButton: false,
       showHint: false
     };
-    this.getChapter = this.getChapter.bind(this);
+    this.getLevel = this.getLevel.bind(this);
     this.changeImage = this.changeImage.bind(this);
     if (Cookies.get('Level') === undefined) {
       Cookies.set('Level', '1', { expires: 1000 });
@@ -34,16 +34,16 @@ class Game extends React.Component {
     this.hideNextLevelButton = this.hideNextLevelButton.bind(this);
     this.showHintButton = this.showHintButton.bind(this);
     this.showHint = this.showHint.bind(this);
-    this.getChapter();
+    this.getLevel();
   }
 
   setLevel() {
     Cookies.set('Level', this.state.chapter[0].level + 1, { expires: 1000 });
   }
 
-  getChapter() {
+  getLevel() {
     axios({
-      url: '/api/chapter',
+      url: '/api/level',
       method: 'get', 
       params: {
         level: Cookies.get('Level')
@@ -56,7 +56,7 @@ class Game extends React.Component {
       });
     })
     .catch(err => {
-      console.error('Error retrieving chapters: ', err);
+      console.error('Error retrieving level: ', err);
     });
   }
 
@@ -68,7 +68,7 @@ class Game extends React.Component {
 
   startOver() {
     Cookies.set('Level', '1', { expires: 1000 });
-    this.getChapter();
+    this.getLevel();
   }
 
   getPreviousLevel() {
@@ -77,7 +77,7 @@ class Game extends React.Component {
       showHintButton: false,
       showHint: false
     });
-    this.getChapter();
+    this.getLevel();
   }
 
   showNextLevelButton() {
@@ -87,7 +87,7 @@ class Game extends React.Component {
   }
 
   hideNextLevelButton() {
-    this.getChapter();
+    this.getLevel();
     this.setState({
       showNextLevel: false,
       showHintButton: false,
