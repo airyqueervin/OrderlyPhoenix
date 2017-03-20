@@ -39,7 +39,7 @@ class Game extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.getSpecificChapter = this.getSpecificChapter.bind(this);
     this.getChapter();
-    this.numbers = []
+    this.numbers = [];
     this.createNums();
     this.getLevel();
   }
@@ -158,17 +158,6 @@ class Game extends React.Component {
     }
     return (
       <Container>
-        <NavDropdown id="nav-dropdown" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle nav caret>
-              Level Selection
-            </DropdownToggle>
-            <DropdownMenu>
-              {this.numbers.map((num) => {
-                return <DropdownItem ><div onClick={() => this.getSpecificChapter(num)}>Level: {num}</div></DropdownItem>
-              })}
-              <DropdownItem>Just Spiders</DropdownItem>
-            </DropdownMenu>
-        </NavDropdown>
         <Row>
           <Col md="6"> 
             <Learn chapter={this.state.chapter} />
