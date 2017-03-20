@@ -8,6 +8,7 @@ require('./../../public/main.css');
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'reactstrap';
 import Cookies from 'js-cookie';
+import { Nav, NavItem, NavDropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 
 class Game extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class Game extends React.Component {
       showNextLevel: false,
       showHintButton: false,
       showHint: false
+      dropdownOpen: false
     };
     this.getLevel = this.getLevel.bind(this);
     this.changeImage = this.changeImage.bind(this);
@@ -34,7 +36,18 @@ class Game extends React.Component {
     this.hideNextLevelButton = this.hideNextLevelButton.bind(this);
     this.showHintButton = this.showHintButton.bind(this);
     this.showHint = this.showHint.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.getSpecificChapter = this.getSpecificChapter.bind(this);
+    this.getChapter();
+    this.numbers = []
+    this.createNums();
     this.getLevel();
+  }
+
+  createNums() {
+    for(var i = 0; i < Cookies.get('Level'); i++){
+      this.numbers.push(i+1);
+    }
   }
 
   setLevel() {
@@ -107,6 +120,31 @@ class Game extends React.Component {
     });
   }
 
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    })
+  }
+
+  getSpecificChapter(level) {
+    axios({
+      url: '/api/level',
+      method: 'get', 
+      params: {
+        level: level
+      }
+    })
+    .then(res => {
+      this.setState({
+        chapter: res.data,
+        image: res.data[0].firstImage
+      })
+    })
+    .catch(err => {
+      console.error('Error retrieving chapters: ', err);
+    });
+  }
+
   render() {
     if (this.state.chapter[0].lastLevel) {
       return (
@@ -120,6 +158,17 @@ class Game extends React.Component {
     }
     return (
       <Container>
+        <NavDropdown id="nav-dropdown" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+            <DropdownToggle nav caret>
+              Level Selection
+            </DropdownToggle>
+            <DropdownMenu>
+              {this.numbers.map((num) => {
+                return <DropdownItem ><div onClick={() => this.getSpecificChapter(num)}>Level: {num}</div></DropdownItem>
+              })}
+              <DropdownItem>Just Spiders</DropdownItem>
+            </DropdownMenu>
+        </NavDropdown>
         <Row>
           <Col md="6"> 
             <Learn chapter={this.state.chapter} />
