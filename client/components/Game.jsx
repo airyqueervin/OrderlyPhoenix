@@ -162,7 +162,7 @@ class Game extends React.Component {
     }
     return (
       <div>
-        <NavDropdown id="nav-dropdown" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+        <NavDropdown id="nav-dropdown" className="navDrop" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
               <DropdownToggle nav caret>
                 Select Level
               </DropdownToggle>
