@@ -178,19 +178,25 @@ class Game extends React.Component {
               <Learn chapter={this.state.chapter} />
               <Instruction chapter={this.state.chapter} />
               <Challenge chapter={this.state.chapter} changeImage={this.changeImage} setLevel={this.setLevel} showNextLevelButton = {this.showNextLevelButton} showHintButton={this.showHintButton} />
-              {this.state.showHintButton ? <button onClick={this.showHint}>Hint</button> : null}
-              {this.state.showHint ? <div>{this.state.chapter[0].hint}</div> : null}
+              {this.state.showHintButton ? <button className="hint button" onClick={this.showHint}>Hint</button> : null}
+              {this.state.showHint ? <div id="hint">{this.state.chapter[0].hint}</div> : null}
               <br />
-              {this.state.chapter[0].level > 1 ? <button onClick={this.getPreviousLevel}>Previous Level</button> : null}
-              {this.state.showNextLevel ? <button onClick={this.hideNextLevelButton}>Next Level</button> : null}
+              <Row>
+                <Col md="6">
+                  {this.state.chapter[0].level > 1 ? <button className="button" onClick={this.getPreviousLevel}>Previous Level</button> : null}
+                </Col>
+                <Col md="6" className="right">
+                  {this.state.showNextLevel ? <button className="button" onClick={this.hideNextLevelButton}>Next Level</button> : null}
+                </Col>
+              </Row>
             </Col>
             <Col md="6" className="rightHalf">
             <Row className="header">
-              <Col md="6">
-                <h3>Level {this.state.chapter[0].level}</h3>
+              <Col md="6" className="left">
+                <strong><p>Level {this.state.chapter[0].level}</p></strong>
               </Col>
               <Col md="6">
-                <h3 className="right">Points: {this.state.chapter[0].points * this.state.chapter[0].level}</h3>
+                <strong><p className="right">Points: {this.state.chapter[0].points * this.state.chapter[0].level}</p></strong>
               </Col>
             </Row>
               <Image image={this.state.image} />

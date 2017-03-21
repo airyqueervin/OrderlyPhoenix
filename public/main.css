@@ -18,19 +18,8 @@ li {
   font-size: 60px;
 }
 
-#challenge {
+#challenge, #instruction, #learn, #hint {
   border: 1px solid grey;
-}
-
-#instruction {
-  border: 1px solid grey;
-}
-
-#learn {
-  border: 1px solid grey;
-}
-
-#challenge, #instruction, #learn {
   margin: 10px 0;
   border-radius: 5px;
   padding: 5px;
@@ -78,4 +67,52 @@ li {
 
 .navItem:hover {
   color: white !important;
+}
+
+.round {
+  margin-left: -10%;
+  margin-top: -8%;
+  width: 120%;
+}
+
+.portrait {
+  border-radius: 50%;
+  border: 10px solid #84C7B8;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  height: 17em;
+  width: 17em;
+}
+
+.submit {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.button {
+  background-color: #84C7B8;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.button:hover {
+  cursor: pointer;
+  cursor: hand;
+  color: #6E6E6E;
+}
+
+#hint {
+  margin-bottom: 10px;
+}
+
+.hint {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.left {
+  text-align: left;
 }
