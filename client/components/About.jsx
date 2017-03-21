@@ -27,20 +27,35 @@ class About extends React.Component {
           <p>
             <table>
               <tr>
-                <td><strong>Airyque</strong><br />
-                 loves swiss cheese, Kirby's Adventure Land NES, and his favorite cartoon is Looney Toons!<br />
-                <img src="https://s3-us-west-1.amazonaws.com/codr/airyque.png" /></td>
-                <td><strong>Nowreen</strong><br />
+                <td>
+                  <strong>Airyque</strong><br />
+                  loves swiss cheese, Kirby's Adventure Land NES, and his favorite cartoon is Looney Toons!<br />
+                  <div className="portrait">
+                    <img src="https://s3-us-west-1.amazonaws.com/codr/airyque.png" className="round" />
+                  </div>
+                </td>
+                <td>
+                  <strong>Nowreen</strong><br />
                   loves smoked gouda cheese, Ocarina of Time, and her favorite cartoon is Dexter's Lab! <br />
-                <img src="https://s3-us-west-1.amazonaws.com/codr/nowreen.png" /></td>
+                  <div className="portrait">
+                    <img src="https://s3-us-west-1.amazonaws.com/codr/nowreen.png" className="round" />
+                  </div>
+                </td>
               </tr>
               <tr>
-                <td><strong>Erik</strong><br />
-                loves gjetost cheese, Cave Story, and his favorite cartoon is the Moomins!<br/>
-                <img src="https://s3-us-west-1.amazonaws.com/codr/erik.png" /></td>
-                <td><strong>Alex</strong><br />
-                loves provolone cheese, Super Smash Bros, and his favorite cartoon is Yu Yu Hakusho!<br />
-                <img src="https://s3-us-west-1.amazonaws.com/codr/alex.png" /></td>
+                <td>
+                  <strong>Erik</strong><br />
+                  loves gjetost cheese, Cave Story, and his favorite cartoon is the Moomins!<br/>
+                  <div className="portrait">
+                    <img src="https://s3-us-west-1.amazonaws.com/codr/erik.png" className="round" />
+                  </div>
+                </td>
+                  <td><strong>Alex</strong><br />
+                  loves provolone cheese, Super Smash Bros, and his favorite cartoon is Yu Yu Hakusho!<br />
+                  <div className="portrait">
+                    <img src="https://s3-us-west-1.amazonaws.com/codr/alex.png" className="round" />
+                  </div>
+                </td>
               </tr>
             </table>
           </p>
