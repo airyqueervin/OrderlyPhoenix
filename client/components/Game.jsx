@@ -41,11 +41,16 @@ class Game extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.getSpecificLevel = this.getSpecificLevel.bind(this);
     this.getLevel();
+  }
+
+  componentDidMount() {
     this.createNums();
   }
 
   setLevel() {
-    Cookies.set('Level', this.state.chapter[0].level + 1, { expires: 1000 });
+    if (Cookies.get('Level') == this.state.chapter[0].level) {
+      Cookies.set('Level', this.state.chapter[0].level + 1, { expires: 1000 });
+    }
   }
 
   getLevel() {
@@ -141,7 +146,8 @@ class Game extends React.Component {
     })
     .then(res => {
       this.setState({
-        chapter: res.data
+        chapter: res.data,
+        dropdownOpen: false
       });
     })
     .catch(err => {
@@ -153,10 +159,9 @@ class Game extends React.Component {
     if (this.state.chapter[0].lastLevel) {
       return (
         <div>
-          You did it!
-          <br /> <br />
-          <button onClick={this.startOver}>Play Again</button>
-          <img src="https://s3-us-west-1.amazonaws.com/codrbucket/lvl_finale_resize1000.png" />
+          <button className="button playAgain" onClick={this.startOver}>Play Again</button>
+          <br />
+          <img className="lastImage" src="https://s3-us-west-1.amazonaws.com/codrbucket/lvl_finale_resize1000.png" />
         </div>
       );
     }
@@ -183,48 +188,21 @@ class Game extends React.Component {
             <Row className="header">
               <Col md="6" className="left">
                 <strong><p className="levelHeader">
-
-
-
-
-    <div>
-        <Navbar color="faded" light>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse className="navbar-toggleable-md" isOpen={this.state.dropdownOpen}>
-            <NavbarBrand href="/">reactstrap</NavbarBrand>
-            <Nav navbar>
-              <NavItem>
-                <NavLink href="/">Components</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
-
-
-
-
-
-                <Navbar light id="navbar">
-                  <NavbarToggler onClick={this.toggle}>
-                    <Collapse className="navbar-toggleable-xs" isOpen={this.state.dropdownOpen}>
-                    <NavbarBrand href="/">Levels</NavbarBrand>
-                    <Nav navbar>
-                      {this.state.numbers.map((num) => {
-                        return <NavItem>
-                          <NavLink href="/">
-                          <div onClick={() => this.getSpecificLevel(num)}>Level {num}</div>
+              <Navbar light id="navbar">
+                <NavbarToggler onClick={this.toggle} />
+                <Collapse className="navbar-toggleable-md" isOpen={this.state.dropdownOpen}>
+                  <NavbarBrand>Select Level</NavbarBrand>
+                  <Nav navbar id="navitems">
+                    {this.state.numbers.map((num) => {
+                      return <NavItem>
+                          <NavLink onClick={() => this.getSpecificLevel(num)}> Level {num}
                           </NavLink>
                           </NavItem>;
-                      })}
-                      <NavItem>
-                        <a href="http://www.cartoonnetwork.com/games/powerpuff-girls/glitch-fixers/index.html" target="_blank">Glitch Fixers</a>
-                      </NavItem>
-                      </Nav>
-                    </Collapse>
-                  </NavbarToggler>
-                </Navbar>
-                Level {this.state.chapter[0].level}</p></strong>
+                    })}
+                  </Nav>
+                </Collapse>
+              </Navbar>
+              Level {this.state.chapter[0].level}</p></strong>
               </Col>
               <Col md="6" className="right">
                 <strong><p className="levelHeader">Points: {this.state.chapter[0].points * this.state.chapter[0].level}</p></strong>

@@ -16,10 +16,10 @@ class App extends React.Component {
       <div>
         <h1 id="title">Welcome to Codr</h1>
         <Nav pills className="nav">
-          <NavItem className="navItem" className="about">
+          <NavItem className="navItem play">
             <NavLink><Link to="/play">Play</Link></NavLink>
           </NavItem>
-          <NavItem className="navItem">
+          <NavItem className="navItem about">
             <NavLink><Link to="/about">About</Link></NavLink>
           </NavItem>
         </Nav>
