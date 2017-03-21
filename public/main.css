@@ -6,6 +6,12 @@
 
 td {
   margin: 20px;
+  font-size: 24px;
+  border: 2px solid #84C7B8;
+  border-radius: 5px;
+  border-collapse: separate;
+  box-shadow: 5px 5px 5px #84C7B8;
+  border-spacing: 1em 1em;
 }
 
 li {
@@ -25,6 +31,10 @@ li {
   padding: 5px;
 }
 
+#challenge, #instruction, #learn {
+  font-size: 24px;
+}
+
 #body {
   background-color: #D1F0E8;
 }
@@ -36,13 +46,14 @@ li {
 
 .mainImage {
   display: block;
-  margin: 10px auto;
+  margin: 30px auto;
   border: 5px solid white;
 }
 
 .rightHalf {
   background-color: #96DBCF;
   border-radius: 5px;
+  margin-top: 10px;
 }
 
 .rightHalf, .leftHalf {
@@ -60,39 +71,25 @@ li {
   border-radius: 5px;
 }
 
-.nav, .navItem {
+ .navItem {
   background-color: #84C7B8;
   color: black;
-}
-.about {
-  /*width: 50%;*/
-  margin-left: 42%;
-  color:black;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 
-.navItem {
-  color:black;
+.play {
+  margin-left: 42%;
 }
 
 .navItem:hover {
   background-color: #96DBCF;
 }
 
-.round {
-  margin-left: -10%;
-  margin-top: -8%;
-  width: 120%;
+.nav {
+  background-color: #84C7B8;
 }
 
-.portrait {
-  border-radius: 50%;
-  border: 10px solid #84C7B8;
-  margin: auto;
-  overflow: hidden;
-  position: relative;
-  height: 17em;
-  width: 17em;
-}
 
 .submit {
   margin-top: 20px;
@@ -102,7 +99,7 @@ li {
 
 .button {
   background-color: #84C7B8;
-  border: 1px solid black;
+  border: 1px solid grey;
   border-radius: 5px;
   box-shadow: 5px 5px 5px grey;
 }
@@ -125,15 +122,42 @@ li {
 .left {
   text-align: left;
 }
+
 .about:hover {
   background-color: #96DBCF;
 }
-.navDrop {
-  margin-left: 42%;
-  width: 14%;
-  /*background-color: #84C7B8;*/
+
+.levelHeader {
+  font-size: 28px;
+  margin-top: 10px;
 }
-.navDrop:hover {
-  width: 14%;
-  background-color: #84C7B8;
+
+#navitems {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+#navbar {
+  display: inline-block;
+}
+
+#navitems:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+section {
+  margin: 20px 0;
+}
+
+.lastImage, .playAgain {
+  display: block;
+  margin: 0 auto;
+}
+
+.playAgain {
+  margin: 20px auto;
 }
