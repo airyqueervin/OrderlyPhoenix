@@ -62,11 +62,20 @@ li {
 
 .nav, .navItem {
   background-color: #84C7B8;
-  color: black !important;
+  color: black;
+}
+.about {
+  /*width: 50%;*/
+  margin-left: 42%;
+  color:black;
+}
+
+.navItem {
+  color:black;
 }
 
 .navItem:hover {
-  color: white !important;
+  background-color: #96DBCF;
 }
 
 .round {
@@ -115,4 +124,16 @@ li {
 
 .left {
   text-align: left;
+}
+.about:hover {
+  background-color: #96DBCF;
+}
+.navDrop {
+  margin-left: 42%;
+  width: 14%;
+  /*background-color: #84C7B8;*/
+}
+.navDrop:hover {
+  width: 14%;
+  background-color: #84C7B8;
 }
