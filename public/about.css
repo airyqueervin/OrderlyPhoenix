@@ -1,0 +1,43 @@
+.content--inner {
+  padding: 0.5% 0;
+}
+.section--about--game {
+  margin: 3% auto;
+}
+.text--about {
+  margin-bottom: 1%;
+  text-align: center;
+}
+.p--about {
+  margin: 0 5%;
+}
+.table--about {
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 1em 1em;
+}
+.td--about {
+  border: 2px solid #84C7B8;
+  box-shadow: 0 0 1px 1px #84C7B8;
+  padding: 1% 1% 4% 1%;
+  text-align: center;
+  width: 600px;
+}
+.p--author--description {
+  margin-top: 1%;
+}
+.circular--portrait {
+  background: #84C7B8;
+  border-radius: 50%;
+  border: 10px solid #84C7B8;
+  height: 10em;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 10em;
+}
+.img--profile {
+  margin-left: -10%;
+  margin-top: -8%;
+  width: 119%;
+}

@@ -4,5 +4,6 @@ bower_components/
 
 build/
 dist/
-www/bundle.js
+bundles
 .vscode/
+.DS_Store
