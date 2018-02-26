@@ -97,7 +97,7 @@
     "instructionText": "Let's try negative numbers and decimals! How do you think this will change the answer?",
     "learnText": "Like real math, programming math also uses negatives and decimal numbers. The rules are the exact same as in regular math!",
     "points": 25,
-    "hint": "When multiplying a negative number by a positive number, the result is the same, just with a '-' in front of the number to show that it is negative. Decimals are fractions that have been converted to decimal form. If we divide 1 by 2, the fraction 1/2 will be converted into a decimal. Think in terms of money: what's half of $1?",
+    "hint": "When multiplying a negative number by a positive number, the result is the same, just with a '-' in front of the number to show that it is negative. Decimals are fractions that have been converted to decimal form. If we divide 1 by 2, the fraction 1/2 will be converted into a decimal. Think in terms of money: What's half of $1? Answer: $0.5",
     "solution": [{
       "input1": "-6",
       "input2": "0.5"
