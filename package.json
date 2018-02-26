@@ -4,8 +4,9 @@
   "description": "Learn to code!",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon server/server.js",
-    "build:watch": "webpack --watch",
+    "start": "node server/server.js",
+    "start:dev": "nodemon server/server.js",
+    "build:watch": "webpack -p --watch",
     "seed": "node server/db/seed.js"
   },
   "repository": {
